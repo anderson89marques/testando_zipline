@@ -3,7 +3,7 @@ from datetime import datetime
 
 from zipline.api import order, record, symbol, order_target
 from zipline import TradingAlgorithm
-from zipline.data.loader import load_from_yahoo
+from zipline.data.loader import load_from_yahoo, load_prices_from_csv
 
 
 #from pandas_datareader.google.daily import GoogleDailyReader
@@ -16,8 +16,8 @@ from zipline.data.loader import load_from_yahoo
 #GoogleDailyReader.url = url
 
 
-START = datetime(2011, 5, 27, 0, 0, 0, 0, pytz.utc).date()
-END = datetime(2012,1,1,0,0,0,0, pytz.utc).date()
+START = datetime.strptime('19/03/2011', '%d/%M/%Y') #datetime(2011, 5, 27, 0, 0, 0, 0, pytz.utc).date()
+END =   datetime.strptime('01/01/2012', '%d/%M/%Y') #datetime(2012,1,1,0,0,0,0, pytz.utc).date()
 DATA = load_from_yahoo(stocks=['AAPL'], start=START, end=END)
 #DATA = pdr.get_data_google(['SPY'], startdate=START, enddate=END)
 
