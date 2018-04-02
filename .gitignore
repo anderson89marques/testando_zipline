@@ -103,4 +103,6 @@ ENV/
 .vscode
 *.pickle
 *.csv
+plt
+logbook
 bitstampUSD*

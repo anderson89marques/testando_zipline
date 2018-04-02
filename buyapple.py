@@ -5,6 +5,7 @@ def initialize(context):
 
 def handle_data(context, data):
     order(symbol('AAPL'), 10)
+    print(data.current(symbol('AAPL'), 'price'))
     record(AAPL=data.current(symbol('AAPL'), 'price'))
 
 def main():
